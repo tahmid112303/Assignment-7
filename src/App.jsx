@@ -1,15 +1,13 @@
 
 import './App.css'
+import Nav from './Nav'
 
 function App() {
 
 
   return (
     <>
-      <h1>Hello World</h1>
-      <h2>Hi
-        
-      </h2>
+      <Nav></Nav>
     </>
   )
 }
