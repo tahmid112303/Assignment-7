@@ -4,7 +4,7 @@ import React from 'react';
 const Footer = () => {
     return (
         <>
-            <div className='mt-[1600px] bg-black h-[460px] w-full flex text-white gap-4 px-6 pt-8 max-sm:flex-col max-sm:h-auto'>
+            <div className='mt-[80px] bg-black h-[460px] w-full flex text-white gap-4 px-6 pt-8 max-sm:flex-col max-sm:h-auto'>
             <div className='w-[250px] h-[350px] mr-16'>
                 <h1 className='text-[24px] font-bold'>CS — Ticket System</h1> <br />
                 <p className=''>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
