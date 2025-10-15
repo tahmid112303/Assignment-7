@@ -1,0 +1,93 @@
+[
+    {
+      "id": 1001,
+      "title": "Login page not loading",
+      "description": "User reports that the login page shows a blank screen.",
+      "customer": "John Doe",
+      "priority": "HIGH PRIORITY",
+      "status": "Open",
+      "createdAt": "2025-10-01"
+    },
+    {
+      "id": 1002,
+      "title": "Payment failed error",
+      "description": "Customer received an error message during checkout.",
+      "customer": "Sarah Lee",
+      "priority": "HIGH PRIORITY",
+      "status": "In Progress",
+      "createdAt": "2025-10-02"
+    },
+    {
+      "id": 1003,
+      "title": "Forgot password link not working",
+      "description": "The password reset link is redirecting to a 404 page.",
+      "customer": "Michael Brown",
+      "priority": "MEDIUM PRIORITY",
+      "status": "Open",
+      "createdAt": "2025-10-03"
+    },
+    {
+      "id": 1004,
+      "title": "Email notifications delayed",
+      "description": "Emails are being sent hours after the triggering event.",
+      "customer": "Emma Wilson",
+      "priority": "LOW PRIORITY",
+      "status": "Pending",
+      "createdAt": "2025-10-04"
+    },
+    {
+      "id": 1005,
+      "title": "App crashes on startup",
+      "description": "The mobile app crashes immediately after opening.",
+      "customer": "David Kim",
+      "priority": "HIGH PRIORITY",
+      "status": "Resolved",
+      "createdAt": "2025-10-05"
+    },
+    {
+      "id": 1006,
+      "title": "Profile update not saving",
+      "description": "User cannot update their profile information.",
+      "customer": "Olivia Jones",
+      "priority": "HIGH PRIORITY",
+      "status": "In Progress",
+      "createdAt": "2025-10-06"
+    },
+    {
+      "id": 1007,
+      "title": "Slow loading dashboard",
+      "description": "Dashboard takes over 20 seconds to load.",
+      "customer": "Liam Smith",
+      "priority": "MEDIUM PRIORITY",
+      "status": "Open",
+      "createdAt": "2025-10-07"
+    },
+    {
+      "id": 1008,
+      "title": "Duplicate orders issue",
+      "description": "Customers are seeing two identical orders after checkout.",
+      "customer": "Sophia Martinez",
+      "priority": "HIGH PRIORITY",
+      "status": "Pending",
+      "createdAt": "2025-10-08"
+    },
+    {
+      "id": 1009,
+      "title": "Search function not returning results",
+      "description": "Search bar shows no results even for valid queries.",
+      "customer": "Noah Anderson",
+      "priority": "MEDIUM PRIORITY",
+      "status": "In Progress",
+      "createdAt": "2025-10-09"
+    },
+    {
+      "id": 1010,
+      "title": "Error 500 on settings page",
+      "description": "An internal server error occurs when accessing the settings page.",
+      "customer": "Ava Thompson",
+      "priority": "HIGH PRIORITY",
+      "status": "Open",
+      "createdAt": "2025-10-10"
+    }
+  ]
+  

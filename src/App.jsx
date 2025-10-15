@@ -4,6 +4,10 @@ import Cards from './Cards'
 import Footer from './Footer'
 import './index.css'
 import Nav from './Nav'
+import Ticket from './Ticket'
+
+const fetchPromise=fetch("ticketData.json")
+.then(res=>res.json())
 
 function App() {
 
@@ -12,6 +16,7 @@ function App() {
     <>
       <Nav></Nav>
       <Cards></Cards>
+      <Ticket fetchPromise={fetchPromise}></Ticket>
       <Footer></Footer>
     </>
   )
