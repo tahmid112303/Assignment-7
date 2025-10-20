@@ -1,4 +1,5 @@
 
+import { Suspense } from 'react'
 import './App.css'
 import Cards from './Cards'
 import Footer from './Footer'
@@ -16,7 +17,9 @@ function App() {
     <>
       <Nav></Nav>
       <Cards></Cards>
+      <Suspense fallback={<span className="loading loading-spinner loading-xl"></span>}>
       <Ticket fetchPromise={fetchPromise}></Ticket>
+      </Suspense>
       <Footer></Footer>
     </>
   )

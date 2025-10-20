@@ -1,22 +1,28 @@
 import { Calendar } from 'lucide-react';
 import React from 'react';
 
-const Tickets = ({data}) => {
+
+
+const Tickets = ({data,increment}) => {
+
     const ticketData=data
     return (
-        <div className='bg-white h-[170px] w-[480px] border-2
-         border-green-600 rounded-[8px] pl-3 cursor-pointer max-sm:h-auto 
-         max-sm:w-auto '>
+        <div className='bg-white h-[170px] w-[480px] rounded-[8px] pl-3 cursor-pointer max-sm:h-auto 
+         max-sm:w-auto ' onClick={()=>increment}>
             <div className=' flex justify-between mt-4'>
-                <h1 className='text-[20px] font-semibold'>{ticketData.title}</h1>
-                <div className='mr-3'>{ticketData.status}</div>
+                <h1 className='text-[20px] font-bold'>{ticketData.title}</h1>
+                <div className={`font-bold mr-3 ${ticketData.status=== 'Open' ?'text-green-600 bg-[#B9F8CF] p-2 rounded-4xl': ticketData.status==="In Progress" ? 
+                    'text-[#9C7700] bg-[#F8F3B9] p-2 rounded-4xl' : ''}`}>{ticketData.status}</div>
+
             </div>
             <div className='mt-4'>{ticketData.description}</div>
 
             <div className='flex gap-5 mt-[30px]'>
                 <p>#{ticketData.id}</p>
-                <p>{ticketData.priority}</p>
-                <p>{ticketData.customer}</p>
+                <p className={`font-bold ${ticketData.priority?.toLowerCase()==='low priority' ? 'text-green-600': ticketData.priority?.toLowerCase()===
+                'high priority' ? 'text-red-600' : ticketData.priority?.toLowerCase()==='medium priority' ? 'text-yellow-600' : ''}`}>
+                {ticketData.priority}</p>
+                <p className='font-semibold'>{ticketData.customer}</p>
                 <p className='flex gap-2'><Calendar></Calendar>
                 {ticketData.createdAt}
                 </p>
