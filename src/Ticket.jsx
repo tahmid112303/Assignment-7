@@ -1,16 +1,11 @@
-import React, { use, useState } from 'react';
+import React, { use } from 'react';
 import Tickets from './Tickets';
 import Cards from './Cards';
+import TaskStatus from './TaskStatus';
 
 
-const Ticket = ({fetchPromise}) => {
-  const [inProgress, setInProgress]=useState(0)
+const Ticket = ({fetchPromise,handleProgress,visible}) => {
 
-  function increment(){
-      setInProgress(inProgress+1)
-  }
-
-  <Cards increment={increment} inProgress={inProgress}></Cards>
 
     const data=use(fetchPromise)
     console.log(data);
@@ -25,7 +20,7 @@ const Ticket = ({fetchPromise}) => {
             {
                 data.map(data=><Tickets
                 key={data.id}
-                increment={increment}
+                handleProgress={handleProgress}
                 data={data}
                 ></Tickets>)
             }
@@ -36,6 +31,7 @@ const Ticket = ({fetchPromise}) => {
            <div>
               <h1 className='text-4xl font-semibold mt-[80px] ml-[20px]'>Task Status</h1> <br />
               <p className='ml-[20px] text-[#627382]'>Select a ticket to add to Task Status</p>
+              <TaskStatus visible={visible}></TaskStatus>
               <p className=' text-3xl font-semibold mt-[40px] ml-[20px]'>Resolved Task</p>
             </div>
 
