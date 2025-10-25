@@ -1,12 +1,12 @@
 import React, { use } from 'react';
 import Tickets from './Tickets';
-import Cards from './Cards';
-import TaskStatus from './TaskStatus';
 
 
-const Ticket = ({fetchPromise,handleProgress,visible}) => {
 
 
+const Ticket = ({fetchPromise,handleProgress,handleResolved,taskStatus}) => {
+
+    console.log(taskStatus);
     const data=use(fetchPromise)
     console.log(data);
     return (
@@ -30,8 +30,27 @@ const Ticket = ({fetchPromise,handleProgress,visible}) => {
 
            <div>
               <h1 className='text-4xl font-semibold mt-[80px] ml-[20px]'>Task Status</h1> <br />
-              <p className='ml-[20px] text-[#627382]'>Select a ticket to add to Task Status</p>
-              <TaskStatus visible={visible}></TaskStatus>
+
+              <div className='ml-[20px] flex flex-col gap-3'>
+                {taskStatus.length===0 ? (
+                   <p className="text-gray-500">No task added yet</p>
+                  ) : (
+                    taskStatus.map(task => (
+                      <div className=" bg-white 
+                        text-lg flex flex-col justify-between  w-[300px] h-[100px]
+                         rounded-[8px] "
+                        key={task.id}
+                      >
+                        <span className='text-center font-bold text-[20px]'>{task.title}</span>
+                        <button className="btn bg-green-500 mx-2 mb-2 
+                         rounded-[8px]" onClick={handleResolved}>Complete</button>
+                      </div>
+                    ))
+                  )}
+      
+
+              </div>
+
               <p className=' text-3xl font-semibold mt-[40px] ml-[20px]'>Resolved Task</p>
             </div>
 

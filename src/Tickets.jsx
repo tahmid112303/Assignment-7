@@ -8,7 +8,7 @@ const Tickets = ({data,handleProgress}) => {
     const ticketData=data
     return (
         <div className='bg-white h-[170px] w-[480px] rounded-[8px] pl-3 cursor-pointer max-sm:h-auto 
-         max-sm:w-auto ' onClick={handleProgress} >
+         max-sm:w-auto ' onClick={()=>handleProgress(ticketData.title)}>
             <div className=' flex justify-between mt-4'>
                 <h1 className='text-[20px] font-bold'>{ticketData.title}</h1>
                 <div className={`font-bold mr-3 ${ticketData.status=== 'Open' ?'text-green-600 bg-[#B9F8CF] p-2 rounded-4xl': ticketData.status==="In Progress" ? 

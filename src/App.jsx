@@ -19,27 +19,27 @@ function App() {
 
   const [countResolved,setCountResolved]=useState(0)
 
-  const [visible,setVisible]=useState(false)
+  const [taskStatus,setTaskStatus]=useState([])
+  
 
-  function handleProgress(){
-    setCountProgress(countProgress+1)
-    toast("In Progress!")
-  }
+  const handleProgress = (ticketTitle) => {
+    setCountProgress(countProgress+1);
+    setTaskStatus(taskStatus=>[...taskStatus,{title:ticketTitle}]);
+    toast("In Progress!");
+  };
 
   const handleResolved=()=>{
     setCountResolved(countResolved+1)
   }
 
-  function handleVisible(){
-    setVisible(true)
-  }
+
 
   return (
     <>
       <Nav></Nav>
       <Cards countProgress={countProgress} countResolved={countResolved}></Cards>
       <Suspense fallback={<span className="loading loading-spinner loading-xl"></span>}>
-      <Ticket fetchPromise={fetchPromise} handleProgress={handleProgress} handleResolved={handleResolved} visible={visible}></Ticket>
+      <Ticket fetchPromise={fetchPromise} handleProgress={handleProgress} handleResolved={handleResolved} taskStatus={taskStatus}></Ticket>
       </Suspense>
       <Footer></Footer>
       <ToastContainer></ToastContainer>
