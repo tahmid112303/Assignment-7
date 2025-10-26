@@ -4,7 +4,7 @@ import Tickets from './Tickets';
 
 
 
-const Ticket = ({fetchPromise,handleProgress,handleResolved,taskStatus}) => {
+const Ticket = ({fetchPromise,handleProgress,handleResolved,taskStatus,resolvedStatus}) => {
 
     console.log(taskStatus);
     const data=use(fetchPromise)
@@ -33,17 +33,17 @@ const Ticket = ({fetchPromise,handleProgress,handleResolved,taskStatus}) => {
 
               <div className='ml-[20px] flex flex-col gap-3'>
                 {taskStatus.length===0 ? (
-                   <p className="text-gray-500">No task added yet</p>
+                   <p className="text-gray-500">Select a ticket to add to Task Status</p>
                   ) : (
-                    taskStatus.map(task => (
+                    taskStatus.map(task =>(
                       <div className=" bg-white 
-                        text-lg flex flex-col justify-between  w-[300px] h-[100px]
+                        text-lg flex flex-col justify-between  w-[280px] h-[100px]
                          rounded-[8px] "
                         key={task.id}
                       >
                         <span className='text-center font-bold text-[20px]'>{task.title}</span>
                         <button className="btn bg-green-500 mx-2 mb-2 
-                         rounded-[8px]" onClick={handleResolved}>Complete</button>
+                         rounded-[8px]" onClick={()=>handleResolved(task.title)}>Complete</button>
                       </div>
                     ))
                   )}
@@ -52,6 +52,14 @@ const Ticket = ({fetchPromise,handleProgress,handleResolved,taskStatus}) => {
               </div>
 
               <p className=' text-3xl font-semibold mt-[40px] ml-[20px]'>Resolved Task</p>
+              
+              <div className='ml-[20px] flex flex-col gap-3 mt-2'>
+                  {resolvedStatus.map((task)=>(
+                    <div key={task.id} className='bg-blue-200 w-[280px] h-[40px] flex justify-center items-center rounded-[8px]'>
+                      <h1 className='font-bold text-lg'>{task.title}</h1></div>
+                  ))}
+              </div>
+
             </div>
 
         </div>
