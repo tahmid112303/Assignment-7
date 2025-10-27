@@ -32,7 +32,9 @@ function App() {
         alert("Already in Progress!")
         return taskStatus;
       }
-      return [...taskStatus,{title:ticketTitle}]
+      else{
+        return [...taskStatus,{title:ticketTitle}]
+      }
     });
     setCountProgress(countProgress+1);
     toast("In Progress!")
