@@ -25,16 +25,25 @@ function App() {
   
 
   const handleProgress = (ticketTitle) => {
+    setTaskStatus(taskStatus=>{
+      const existing=taskStatus.some(task=>task.title === ticketTitle);
+      if(existing===true){
+        setCountProgress(countProgress);
+        alert("Already in Progress!")
+        return taskStatus;
+      }
+      return [...taskStatus,{title:ticketTitle}]
+    });
     setCountProgress(countProgress+1);
-    setTaskStatus(taskStatus=>[...taskStatus,{title:ticketTitle}]);
-    toast("In Progress!");
+    toast("In Progress!")
   };
 
   const handleResolved=(ticketTitle)=>{
     setCountResolved(countResolved+1);
     setResolvedStatus(resolvedStatus=>[...resolvedStatus,{title:ticketTitle}]);
+    setTaskStatus(oldTasks => oldTasks.filter(task => task.title !== ticketTitle));
     setCountProgress(countProgress-1);
-    toast("Resolved!");
+    toast("Completed!");
   }
 
 

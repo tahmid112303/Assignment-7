@@ -54,9 +54,9 @@ const Ticket = ({fetchPromise,handleProgress,handleResolved,taskStatus,resolvedS
               <p className=' text-3xl font-semibold mt-[40px] ml-[20px]'>Resolved Task</p>
               
               <div className='ml-[20px] flex flex-col gap-3 mt-2'>
-                  {resolvedStatus.map((task)=>(
-                    <div key={task.id} className='bg-blue-200 w-[280px] h-[40px] flex justify-center items-center rounded-[8px]'>
-                      <h1 className='font-bold text-lg'>{task.title}</h1></div>
+                  {resolvedStatus.map(task=>(
+                    <div key={task.id} className='bg-blue-200 w-[280px] h-[90px] flex justify-center items-center rounded-[8px]'>
+                      <h1 className='font-bold text-lg text-center'>{task.title}</h1></div>
                   ))}
               </div>
 
