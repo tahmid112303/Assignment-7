@@ -33,10 +33,10 @@ function App() {
         return taskStatus;
       }
       else{
+        setCountProgress(countProgress+1);
         return [...taskStatus,{title:ticketTitle}]
       }
     });
-    setCountProgress(countProgress+1);
     toast("In Progress!")
   };
 
